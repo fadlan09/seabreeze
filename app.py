@@ -6,13 +6,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
+import os
 
 st.set_page_config(page_title="🌊 Sea Breeze Simulator", layout="wide")
 
 # === 1. Load Data ===
 @st.cache_data
 def load_data():
-    ds = xr.open_dataset("seabreeze.nc")
+
+current_dir = os.path.dirname(__file__)
+file_path = os.path.join(current_dir, "seabreeze.nc")
+
+ds = xr.open_dataset(file_path)
     return ds
 
 ds = load_data()
@@ -93,4 +98,5 @@ st.pyplot(fig2)
 
 st.markdown("---")
 st.caption("📘 Versi 1 – Visualisasi dasar sea breeze dari ERA5 (t2m, u10, v10). Versi lanjut akan menambahkan cross-section dan analisis tekanan.")
+
 
