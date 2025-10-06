@@ -4,3 +4,5 @@ numpy
 pandas
 matplotlib
 cartopy
+netcdf4
+h5netcdf
