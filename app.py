@@ -15,7 +15,7 @@ def load_data():
     import os
     current_dir = os.path.dirname(__file__)
     file_path = os.path.join(current_dir, "seabreeze.nc")
-    ds = xr.open_dataset(file_path, engine="netcdf4")
+    ds = xr.open_dataset(file_path, engine="h5netcdf")
     return ds
 
 ds = load_data()
@@ -96,6 +96,7 @@ st.pyplot(fig2)
 
 st.markdown("---")
 st.caption("📘 Versi 1 – Visualisasi dasar sea breeze dari ERA5 (t2m, u10, v10). Versi lanjut akan menambahkan cross-section dan analisis tekanan.")
+
 
 
 
