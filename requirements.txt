@@ -1,0 +1,6 @@
+streamlit
+xarray
+numpy
+pandas
+matplotlib
+cartopy
